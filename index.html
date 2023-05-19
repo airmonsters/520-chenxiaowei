@@ -4153,11 +4153,30 @@
         </div>
     </div>
     <script>
+        let counter = 1;
     	let allLinks = document.getElementsByTagName("a");
+        let text = document.getElementById("kw");
+        console.log(text)
+        console.log(text.value)
     	for (var i = 0; i < allLinks.length; i++) {
     		allLinks[i].href = "javascript:;"
     		allLinks[i].target = "_self";
-    		allLinks[i].onclick = () => {alert('你想跑去哪里，乖乖搜索！')};
+    		allLinks[i].onclick = () => {
+                console.log(counter)
+                if(counter < 3) {
+                    alert('别点啦别点啦, 快百度你的名字');
+                } else if(counter < 5){
+                    alert('??? 调皮是会上瘾的是吗');
+                } else if(counter < 7){
+                    alert('我叫你一声媳妇儿, 你快百度');
+                } else if(counter < 9){
+                    alert('智障是会传染的');
+                } else {
+                    alert('真没了');
+                }
+                counter++;
+            };
+
     	}
     </script>
 </body>
